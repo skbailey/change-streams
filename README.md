@@ -23,3 +23,5 @@ mongosh --port 27016 -u adminuser -p mypassword --authenticationDatabase admin
 mongosh --port 27017
 > rs.initiate()
 ```
+
+5. Follow change stream [tutorial](https://www.mongodb.com/blog/post/an-introduction-to-change-streams)

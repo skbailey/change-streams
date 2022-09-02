@@ -9,7 +9,6 @@ services:
     ports:
       - "27016:27017"
     volumes:
-      #- ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
       - ./repl-keyfile:/repl-keyfile
       - mongo_data:/data/db
     environment:
