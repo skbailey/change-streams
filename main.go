@@ -19,7 +19,11 @@ func main() {
 	database := client.Database("demo")
 	stockCollection := database.Collection("stock")
 
-	stockStream, err := stockCollection.Watch(context.TODO(), mongo.Pipeline{})
+	stockStream, err := stockCollection.Watch(
+		context.TODO(),
+		mongo.Pipeline{},
+		options.ChangeStream().SetFullDocument(options.WhenAvailable),
+	)
 	if err != nil {
 		panic(err)
 	}
